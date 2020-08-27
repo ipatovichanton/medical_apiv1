@@ -1,0 +1,70 @@
+# create clinic
+
+{
+    "title": "test_clinic",
+    "city": 2,
+    "address": "test_address
+}
+
+# create doctor 
+> !!! Please member that passport_id, email are unique
+
+{
+    "passport_id": "2121212",
+    "passport_series": "213421",
+    "password": "testpassword1234",
+    "first_name": "maxim",
+    "last_name": "lin",
+    "patronymic": "Olegovich",
+    "email": "maxim226356@mail.ru",
+    "birthday": "1999-08-01",
+    "phone" : "+375296516350",
+    "position": "doctor",
+    "workplace_id": 1,
+    "about_me": "some text"
+}
+
+# create ailing - /api/ailings/create [POST]
+
+
+{
+    "passport_id": "2121212",
+    "passport_series": "213421",
+    "password": "testpassword1234",
+    "first_name": "maxim",
+    "last_name": "lin",
+    "patronymic": "Olegovich",
+    "email": "maxim226356@mail.ru",
+    "birthday": "1999-08-01",
+    "phone" : "+375296516350",
+    "city_id" : 2,
+    "address": "some address"
+}
+
+ # create request - /api/requests/create [POST]
+ 
+
+ {
+     "to_clinic_id": 1,
+     "information": "text",
+ }
+
+ # update request - /api/requests/<int:id>/update [PATCH]
+
+
+ {
+     "status": "DONE",
+     "answer": "text"
+ }
+
+# create token - /api/auth/jwt/create
+
+
+{
+    "passport_id": "2121212",
+    "password": "testpassword1234"
+}
+
+# for next using endpoint which require token 
+# should to pass header as this example
+# JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk1OTY1ODc5LCJqdGkiOiIwNDk1NjhkZmY0MzU0YTE5YmFkZjgxYTE2M2ZkMWFkYiIsInVzZXJfaWQiOjd9.LtRFgSViM6UclBrhZAQ26HCj5MnYlGF5wwKUIDh7f_Q
